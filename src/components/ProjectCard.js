@@ -1,15 +1,16 @@
-import {Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
+import {Card, CardActionArea, CardContent, CardMedia, Divider, Typography } from '@mui/material'
 import { Stack } from '@mui/system'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ProjectCard = (props) => {
   return (
-    <Card elevation={12} variant="elevation" sx={{width: 500}}>
-        <CardActionArea onClick={(e)=>{console.log(props.name)}}>
+    <Card elevation={12} variant="elevation" sx={{width:300}}>
+        <CardActionArea component={Link} to={props.destination}>
             <CardMedia
                 component="img"
-                height="250"
-                image={props.img}//"https://raw.githubusercontent.com/tparker48/sherpa-synthesizer/master/Images/UI%20final.png"
+                height="150"
+                image={props.img}
             />
             <CardContent>
               <Stack direction="row" alignItems="baseline">
@@ -19,7 +20,7 @@ const ProjectCard = (props) => {
                     fontFamily: 'roboto',
                     fontWeight: 300,
                   }}
-                  gutterBottom variant="h5" component="div">
+                  gutterBottom variant="h6" component="div">
                 {props.name}
                 </Typography>
                 <Typography

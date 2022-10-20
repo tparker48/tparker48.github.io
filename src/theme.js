@@ -9,9 +9,13 @@ export const theme = createTheme({
     secondary: {
       main: '#121212',
     },
+    error: {
+      main: '#f76f6f',
+    },
+    other: '#e0dabf',
     background: {
       default: '#1e1e1e',
-      paper: '#232323',
+      paper: '#262626',
     },
     text: {
       primary: '#f1eee4',
