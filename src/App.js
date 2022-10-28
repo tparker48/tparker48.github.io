@@ -18,18 +18,14 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />}/>
         <Route path="/plugins" element={<Plugins />}/>
-        <Route path="/music" element={<Music />}/>
         <Route path="/resume" element={<Resume />}/>
         <Route path="/contact" element={<Contact />}/>
-        {plugin_data.map((_, index) => (
-          <Route path={"/plugins/"+_.name} element={<PluginPage 
-            name={_.name}
-            type={_.type}
-            img={_.img}
-            price={_.price}
-            tagline={_.tagline}
-            description={_.description}
-          />}/>
+        {plugin_data.map((plugin, index) => (
+          <Route 
+            path={"/plugins/"+plugin.name}
+            key={index}
+            element={<PluginPage plugin={plugin}/>}
+          />
         ))}
         
       </Routes>

@@ -66,12 +66,6 @@ const Navbar = () => {
           </ListItemIcon>
           Plugins
         </MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/music">
-          <ListItemIcon>
-            <MusicNote />
-          </ListItemIcon>
-          Music
-        </MenuItem>
         <MenuItem onClick={handleClose} component={Link} to="/resume">
           <ListItemIcon>
             <Article />
