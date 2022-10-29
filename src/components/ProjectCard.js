@@ -1,41 +1,39 @@
-import {Card, CardActionArea, CardContent, CardMedia, Divider, Typography } from '@mui/material'
-import { Stack } from '@mui/system'
+import { Box, Paper, Stack, Typography } from '@mui/material'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const ProjectCard = (props) => {
   return (
-    <Card elevation={12} variant="elevation" sx={{width:300}}>
-        <CardActionArea component={Link} to={props.destination}>
-            <CardMedia
-                component="img"
-                height="150"
-                image={props.img}
-            />
-            <CardContent>
-              <Stack direction="row" alignItems="baseline">
+    <Paper>
+        <Box padding={2}>
+            <Stack direction="row" justifyContent="space-between">
                 <Typography
-                  sx={{
-                    mr: 2,
-                    fontFamily: 'roboto',
-                    fontWeight: 300,
-                  }}
-                  gutterBottom variant="h6" component="div">
-                {props.name}
+                    component="a"
+                    href={props.project.link}
+                    variant="h6"
+                    color="textPrimary"
+                    sx={{
+                        textDecoration:'none',
+                        fontSize:{xs:'4vw', sm:24}
+                    }}
+                >
+                    {props.project.name}
                 </Typography>
-                <Typography
-                  sx={{
-                    mr: 2,
-                    fontFamily: 'roboto',
-                    fontWeight: 200,
-                  }}
-                  gutterBottom variant="h6" component="div">
-                {props.info}
+                <Typography sx={{fontSize:17, fontWeight:200}}>
+                {props.project.language}
                 </Typography>
-              </Stack>
-            </CardContent>
-        </CardActionArea>
-    </Card>
+            </Stack>
+            <Typography sx={{fontSize:17, fontWeight:200}}>
+                {props.project.description}
+            </Typography>
+            <Typography sx={{fontWeight:200}}>
+                <ul>
+                    {props.project.details.map((line) => (
+                        <li>{line}</li>
+                    ))}
+                </ul>
+            </Typography> 
+        </Box>
+    </Paper>
   )
 }
 

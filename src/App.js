@@ -3,12 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import { theme } from "./theme.js"
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-import Music from "./components/Music";
 import Navbar from "./components/Navbar";
 import Plugins from "./components/Plugins";
 import Resume from "./components/Resume";
 import PluginPage from "./components/PluginPage.js";
-import { plugin_data } from "./pluginData.js";
+import { plugin_data } from "./data.js";
 
 function App() {
   return (
@@ -16,7 +15,7 @@ function App() {
       <CssBaseline />
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home />}/>
+        <Route exact path="/" element={<Home/>}/>
         <Route path="/plugins" element={<Plugins />}/>
         <Route path="/resume" element={<Resume />}/>
         <Route path="/contact" element={<Contact />}/>

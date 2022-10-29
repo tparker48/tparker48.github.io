@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Box, IconButton, ListItemIcon, Menu, MenuItem, Toolbar } from '@mui/material'
+import { AppBar, Box, IconButton, ListItemIcon, Menu, MenuItem, Stack, Toolbar, Typography } from '@mui/material'
 import { styled } from '@mui/system';
 import { Article, Email, GitHub, Home, LinkedIn, MusicNote, Power} from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -31,10 +31,19 @@ const Navbar = () => {
   return (
     <AppBar  color="secondary" mb={2} position="sticky">
       <StyledToolbar>
+        <Stack direction="row" spacing={2} alignItems="center">
           <IconButton onClick={handleClick} >
             <MenuIcon />
           </IconButton>
-
+          <Typography
+            sx={{fontSize:21, fontWeight:300, textDecoration:"none"}}
+            component="a"
+            href="/"
+            color="textPrimary"
+          >
+            Thomas Parker
+          </Typography>
+        </Stack>
           <Icons>
             <IconButton onClick={()=>{window.open('https://www.linkedin.com/in/thomas-parker-793749171/', "_blank", "noopener noreferrer")}}>
                 <LinkedIn />
@@ -43,7 +52,6 @@ const Navbar = () => {
                 <GitHub />
             </IconButton>
           </Icons>
-
       </StyledToolbar>
       <Menu
         id="basic-menu"
