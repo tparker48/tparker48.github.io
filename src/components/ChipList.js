@@ -5,8 +5,8 @@ const ChipList = (props) => {
   return (
     <div>
       <Grid container spacing={1} mb={1}>
-          {props.list.map((chip_text) => (
-              <Grid item>
+          {props.list.map((chip_text, index) => (
+              <Grid item key={index}>
                   <Chip label={chip_text} variant="outlined" />
               </Grid>
           ))}

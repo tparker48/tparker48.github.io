@@ -21,13 +21,13 @@ const JobCard = (props) => {
             <Typography sx={{fontWeight:200}}>
                 {props.job.date_from} - {props.job.date_to}
             </Typography>
-            <Typography sx={{fontWeight:200}}>
                 <ul>
-                    {props.job.details.map((line) => (
-                        <li>{line}</li>
+                    {props.job.details.map((line, index) => (
+                        <Typography key={index} sx={{fontWeight:200}}>
+                            <li>{line}</li>
+                        </Typography>
                     ))}
                 </ul>
-            </Typography>
         </Box>
     </Paper>
   )

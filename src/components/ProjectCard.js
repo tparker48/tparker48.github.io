@@ -25,13 +25,13 @@ const ProjectCard = (props) => {
             <Typography sx={{fontSize:17, fontWeight:200}}>
                 {props.project.description}
             </Typography>
-            <Typography sx={{fontWeight:200}}>
                 <ul>
-                    {props.project.details.map((line) => (
-                        <li>{line}</li>
+                    {props.project.details.map((line, index) => (
+                        <Typography key={index} sx={{fontWeight:200}}>
+                            <li>{line}</li>
+                        </Typography>
                     ))}
                 </ul>
-            </Typography> 
         </Box>
     </Paper>
   )

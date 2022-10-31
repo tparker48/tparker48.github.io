@@ -16,17 +16,17 @@ const Resume = () => {
     <Stack m={'auto'} mt={2} sx={{maxWidth:750}} spacing={4} padding={2}>
       <Stack spacing={1}>
         <SectionHeader variant="h4"> Skills </SectionHeader>
-        { skills_data.map((skill_list, index) => (<ChipList divider={(index < 2)} list={skill_list} />)) }
+        { skills_data.map((skill_list, index) => (<ChipList key={index} divider={(index < 2)} list={skill_list} />)) }
       </Stack>
 
       <Stack spacing={1.5}>
       <SectionHeader variant="h4"> Work Experience </SectionHeader>
-        { job_data.map((job) => (<JobCard job={job} />)) }
+        { job_data.map((job, index) => (<JobCard key={index} job={job}/>)) }
       </Stack>
 
       <Stack spacing={1.5}>
         <SectionHeader variant="h4"> Recent Projects </SectionHeader>
-        { project_data.map((project) => (<ProjectCard project={project} />)) }
+        { project_data.map((project, index) => (<ProjectCard key={index} project={project} />)) }
       </Stack>
 
       <Stack spacing={1}>

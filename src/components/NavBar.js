@@ -1,9 +1,16 @@
 import React from 'react'
-import { AppBar, Box, IconButton, ListItemIcon, Menu, MenuItem, Stack, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography } from '@mui/material'
 import { styled } from '@mui/system';
-import { Article, Email, GitHub, Home, LinkedIn, MusicNote, Power} from '@mui/icons-material';
+import { Article, Email, GitHub, Home, LinkedIn, Power} from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+
+const buttons = [
+  {name: "Home", route:"/", icon:<Home/>},
+  {name: "Plug-Ins", route:"/plugins", icon:<Power/>},
+  {name: "Resume", route:"/resume", icon:<Article/>},
+  {name: "Contact", route:"/contact", icon:<Email/>}
+];
 
 const StyledToolbar = styled(Toolbar)({
   display:"flex",
@@ -17,29 +24,56 @@ const Icons = styled(Box)(({theme}) => ({
 }));
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [state, setState] = React.useState({
+    left: false
+  });
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setState({ ...state, "left": open });
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const list = (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {buttons.map((button, index) => (
+          <ListItem key={index} disablePadding>
+            <ListItemButton component={Link} to={button.route}>
+              <ListItemIcon>
+                {button.icon}
+              </ListItemIcon>
+              <ListItemText primary={button.name} />
+            </ListItemButton>
+        </ListItem>
+        ))}
+          
+      </List>
+    </Box>
+  );
 
   return (
     <AppBar  color="secondary" mb={2} position="sticky">
       <StyledToolbar>
         <Stack direction="row" spacing={2} alignItems="center">
-          <IconButton onClick={handleClick} >
+          <IconButton onClick={toggleDrawer(true)}>
             <MenuIcon />
           </IconButton>
           <Typography
-            sx={{fontSize:21, fontWeight:300, textDecoration:"none"}}
+            sx={{
+              fontSize:{xs:18, sm:21},
+              fontWeight:300,
+              textDecoration:"none"}}
             component="a"
             href="/"
             color="textPrimary"
+            display={{xs:"none", sm:"block"}}
           >
             Thomas Parker
           </Typography>
@@ -52,47 +86,17 @@ const Navbar = () => {
                 <GitHub />
             </IconButton>
           </Icons>
+          <Drawer
+            anchor={"left"}
+            open={state["left"]}
+            onClose={toggleDrawer(false)}
+          >
+            {list}
+          </Drawer>
       </StyledToolbar>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose} component={Link} to="/">
-          <ListItemIcon>
-            <Home />
-          </ListItemIcon>
-          Home
-        </MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/plugins">
-          <ListItemIcon>
-            <Power />
-          </ListItemIcon>
-          Plugins
-        </MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/resume">
-          <ListItemIcon>
-            <Article />
-          </ListItemIcon>
-          Resume
-        </MenuItem>
-        <MenuItem onClick={handleClose} component={Link} to="/contact">
-          <ListItemIcon>
-            <Email />
-          </ListItemIcon>
-          Contact
-        </MenuItem>
-      </Menu>
+      
     </AppBar>
   )
 }
 
 export default Navbar
-
-// <IconButton onClick={()=>{window.open('https://soundcloud.com/6009', "_blank", "noopener noreferrer")}}>
-//   <CloudCircle />
-// </IconButton>
