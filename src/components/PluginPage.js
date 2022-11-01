@@ -11,8 +11,7 @@ const ProjectPage = (props) => {
         if (playing) return <PauseCircle sx={{width:50, height:50}} />
         else return <PlayCircle sx={{width:50, height:50}} />
     }
-
-
+    
     return (
         <Stack padding={2} alignItems="center">
             <Paper sx={{background:'#2a2a2a'}}>

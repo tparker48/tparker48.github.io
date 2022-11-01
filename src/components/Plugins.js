@@ -6,11 +6,11 @@ import PluginCard from './PluginCard'
 const Plugins = () => {
   return (
     <Stack alignItems="center" mt={2}>
-      <Stack direction="row" alignItems="baseline" spacing={2} mb={5} mt={2}>
-        <Typography variant="h3" sx={{fontWeight:300}}>
+      <Stack direction="row" alignItems="baseline" spacing={2} mb={2} mt={2}>
+        <Typography sx={{fontSize:40, fontWeight:200}}>
           Plug-Ins
         </Typography>
-        <Typography variant="h4" color = "textSecondary" sx={{fontWeight:300}}>
+        <Typography color = "textSecondary" sx={{fontSize:25, fontWeight:300}}>
           VST3/AU
         </Typography>
       </Stack>

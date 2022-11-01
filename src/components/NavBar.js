@@ -1,54 +1,52 @@
 import React from 'react'
 import { AppBar, Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Toolbar, Typography } from '@mui/material'
 import { styled } from '@mui/system';
-import { Article, Email, GitHub, Home, LinkedIn, Power} from '@mui/icons-material';
+import { Article, Light, Person, Power} from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 
-const buttons = [
-  {name: "Home", route:"/", icon:<Home/>},
-  {name: "Plug-Ins", route:"/plugins", icon:<Power/>},
-  {name: "Resume", route:"/resume", icon:<Article/>},
-  {name: "Contact", route:"/contact", icon:<Email/>}
-];
+const LightText = styled(Typography)(({ theme }) => ({
+  fontSize:22,
+  fontWeight:200,
+  textDecoration:"none",
+  color:theme.palette.text.primary,
+}));
 
 const StyledToolbar = styled(Toolbar)({
   display:"flex",
   justifyContent:"space-between",
 });
 
-const Icons = styled(Box)(({theme}) => ({
-  display:"flex",
-  gap:"20px",
-  alignItems:"center",
-}));
+const buttons = [
+  {name: <LightText>Plug-Ins</LightText>, route:"/plugins", icon:<Power/>},
+  {name: <LightText>Resume</LightText>, route:"/resume", icon:<Article/>},
+  {name: <LightText>About</LightText>, route:"/about", icon:<Person/>}
+];
 
 const Navbar = () => {
   const [state, setState] = React.useState({
-    left: false
+    right: false
   });
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-    setState({ ...state, "left": open });
+    setState({ ...state, "right": open });
   };
 
   const list = (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 125 }}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
+      mt={0}
     >
       <List>
         {buttons.map((button, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton component={Link} to={button.route}>
-              <ListItemIcon>
-                {button.icon}
-              </ListItemIcon>
               <ListItemText primary={button.name} />
             </ListItemButton>
         </ListItem>
@@ -61,38 +59,39 @@ const Navbar = () => {
   return (
     <AppBar  color="secondary" mb={2} position="sticky">
       <StyledToolbar>
-        <Stack direction="row" spacing={2} alignItems="center">
-          <IconButton onClick={toggleDrawer(true)}>
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            sx={{
-              fontSize:{xs:18, sm:21},
-              fontWeight:300,
-              textDecoration:"none"}}
+        <Stack m="auto" sx={{width:{xs:"100vw", md:"80vw"}}} direction="row" justifyContent="space-between" alignItems="center">
+          <LightText
+            sx={{fontSize:{xs:24, sm:28}}}
             component="a"
-            href="/"
+            href="/#"
             color="textPrimary"
-            display={{xs:"none", sm:"block"}}
           >
             Thomas Parker
-          </Typography>
-        </Stack>
-          <Icons>
-            <IconButton onClick={()=>{window.open('https://www.linkedin.com/in/thomas-parker-793749171/', "_blank", "noopener noreferrer")}}>
-                <LinkedIn />
-            </IconButton>
-            <IconButton onClick={()=>{window.open('https://github.com/tparker48', "_blank", "noopener noreferrer")}}>
-                <GitHub />
-            </IconButton>
-          </Icons>
-          <Drawer
-            anchor={"left"}
-            open={state["left"]}
-            onClose={toggleDrawer(false)}
+          </LightText>
+
+          <IconButton 
+            color="primary" 
+            onClick={toggleDrawer(true)}
+            sx={{display:{xs:"block", md:"none"}}}
           >
-            {list}
-          </Drawer>
+            <MenuIcon />
+          </IconButton>
+          
+
+          <Stack display={{xs:"none", md:"flex"}} direction="row" spacing={8}>
+            <LightText component="a" href="/#/plugins">Plug-Ins</LightText>
+            <LightText component="a" href="/#/resume">Resume</LightText>
+            <LightText component="a" href="/#/about">About</LightText>
+          </Stack>
+
+        </Stack>
+        <Drawer
+          anchor={"right"}
+          open={state["right"]}
+          onClose={toggleDrawer(false)}
+        >
+          {list}
+        </Drawer>
       </StyledToolbar>
       
     </AppBar>
