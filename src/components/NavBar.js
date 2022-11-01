@@ -37,7 +37,7 @@ const Navbar = () => {
 
   const list = (
     <Box
-      sx={{ width: 125 }}
+      sx={{ width: 200 }}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
