@@ -5,7 +5,8 @@ import Home from "./components/Home";
 import Plugins from "./components/Plugins";
 import Resume from "./components/Resume";
 import About from "./components/About";
-import Navbar from "./components/Navbar";
+import Music from "./components/Music";
+import Navbar from "./components/Navbar.js";
 import PluginPage from "./components/PluginPage.js";
 import { plugin_data } from "./data.js";
 
@@ -13,12 +14,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route path="/plugins" element={<Plugins />}/>
         <Route path="/resume" element={<Resume />}/>
         <Route path="/about" element={<About />}/>
+        <Route path="/music" element={<Music />}/>
+
         {plugin_data.map((plugin, index) => (
           <Route 
             path={"/plugins/"+plugin.name}
