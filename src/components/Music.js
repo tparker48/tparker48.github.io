@@ -9,64 +9,81 @@ const Music = () => {
     }
 
   return (
-    <div>
+    <Stack direction={{xs:"column"}} alignItems={{xs:"center"}}>
+      
     <Stack
+      bgcolor={"#111111"}
+      width={"100vw"}
       direction={{xs:"column"}}
-      justifyContent="center"
+      justifyContent="left"
       alignItems={{xs:"center"}}
-      padding={7}
-      spacing={3}
+      paddingLeft={7}
+      paddingTop={7}
+      paddingRight={7}
+      paddingBottom={2}
     >
       
-
-      <Card elevation={12} variant="elevation" sx={{width:200, mb:0}}>
-            <CardMedia
-                component="img"
-                height="full"
-                image="https://raw.githubusercontent.com/tparker48/tparker48.github.io/master/images/me.jpg"
-            />
-      </Card>
-    </Stack>
-      
-      <Stack
-      direction={{xs:"column"}}
-      justifyContent="center"
-      alignItems={{xs:"left"}}
-      spacing={2}
-      paddingLeft={7}
+      <Box 
+        component="img"
+        sx={
+          { width:{xs:225, sm: 500}, mb:3}} 
+        alt="The house from the offer."
+        src="https://raw.githubusercontent.com/tparker48/tparker48.github.io/master/images/zap.png"
       >
+      </Box>
+    <Typography color="textPrimary" sx={{fontSize:{xs:22, sm:27}, fontWeight:300}}>Street Portraits</Typography> 
+    <Typography color="textSecondary" sx={{fontSize:{xs:20, sm:25}, fontWeight:300}}>Tom Parker</Typography> 
+    </Stack>
+    <Stack
+      direction={{xs:"column"}}
+      justifyContent="left"
+      alignItems={{xs:"left"}}
+      spacing={1}
+      padding={1}
+      mt={5}
+    >
 
-        <Typography 
-          sx={{fontSize:30, fontWeight:200}}
-          onClick={()=>openLink("https://google.com")}>
-          Spotify
-        </Typography>
+      <Typography
+        width={{xs:225, sm: 500}}
+        sx={{fontSize:22, fontWeight:300}}
+        paddingLeft={1}
+        onClick={()=>openLink("https://google.com")}>
+        Spotify
+      </Typography>
 
-        <Typography 
-          sx={{fontSize:30, fontWeight:200}}
-          onClick={()=>openLink("https://google.com")}>
-          Apple Music
-        </Typography>
+      <Typography 
+        width={{xs:225, sm: 500}}
+        sx={{fontSize:22, fontWeight:300}}
+        paddingLeft={1}
+        onClick={()=>openLink("https://google.com")}>
+        Apple Music
+      </Typography>
 
-        <Typography 
-          sx={{fontSize:30, fontWeight:200}}
-          onClick={()=>openLink("https://google.com")}>
-          Youtube Music
-        </Typography>
+      <Typography 
+        width={{xs:225, sm: 500}}
+        sx={{fontSize:22, fontWeight:300}}
+        paddingLeft={1}
+        onClick={()=>openLink("https://google.com")}>
+        Youtube Music
+      </Typography>
 
-        <Typography 
-          sx={{fontSize:30, fontWeight:200}}
-          onClick={()=>openLink("https://soundcloud.com/6009/sets/street-portraits")}>
-          SoundCloud
-        </Typography>
+      <Typography 
+        width={{xs:225, sm: 500}}
+        sx={{fontSize:22, fontWeight:300}}
+        paddingLeft={1}
+        onClick={()=>openLink("https://soundcloud.com/6009/sets/street-portraits")}>
+        SoundCloud
+      </Typography>
 
-        <Typography 
-          sx={{fontSize:30, fontWeight:200}}
-          onClick={()=>openLink("https://tparker.bandcamp.com/album/street-portraits")}>
-          BandCamp
-        </Typography>
-      </Stack>
-    </div>
+      <Typography 
+        width={{xs:225, sm: 500}}
+        sx={{fontSize:22, fontWeight:300}}
+        paddingLeft={1}
+        onClick={()=>openLink("https://tparker.bandcamp.com/album/street-portraits")}>
+        BandCamp
+      </Typography>
+    </Stack>
+    </Stack>
   )
 }
 

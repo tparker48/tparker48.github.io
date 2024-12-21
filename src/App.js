@@ -14,14 +14,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/* <Navbar /> */}
+      {/*
+      <Navbar /> 
       <Routes>
-        <Route exact path="/" element={<Home/>}/>
+        <Route path="/music" element={<Music />}/> 
+        {/* 
+        <Route exact path="/" element={<Home/>}/> 
         <Route path="/plugins" element={<Plugins />}/>
-        <Route path="/resume" element={<Resume />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/music" element={<Music />}/>
-
+        <Route path="/resume" element={<Resume />}/> 
+        <Route path="/about" element={<About />}/> 
         {plugin_data.map((plugin, index) => (
           <Route 
             path={"/plugins/"+plugin.name}
@@ -31,6 +32,8 @@ function App() {
         ))}
         
       </Routes>
+      */}
+      <Music/>
     </ThemeProvider>
   );
 }
