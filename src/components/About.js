@@ -25,7 +25,7 @@ const About = () => {
                 />
                 
                 <Stack direction="row" spacing={3} mt={2}>
-                    <IconButton onClick={()=>openLink("https://www.linkedin.com/in/thomas-parker-793749171/")}>
+                    <IconButton onClick={()=>openLink("https://www.linkedin.com/in/thomas-parker-793749170/")}>
                         <LinkedIn/>
                     </IconButton>
                     <IconButton onClick={()=>openLink("https://github.com/tparker48")}>

@@ -40,7 +40,10 @@ const Music = () => {
       alignItems={{xs:"left"}}
       spacing={1}
       padding={1}
-      mt={5}
+      mt={5
+
+        
+      }
     >
 
       <Typography
@@ -63,7 +66,7 @@ const Music = () => {
         width={{xs:225, sm: 500}}
         sx={{fontSize:22, fontWeight:300}}
         paddingLeft={1}
-        onClick={()=>openLink("https://google.com")}>
+        onClick={()=>openLink("https://music.youtube.com/playlist?list=OLAK5uy_mHdv_udIYiU5cpXxtGdcGqqfcE9oYLlFg")}>
         Youtube Music
       </Typography>
 
