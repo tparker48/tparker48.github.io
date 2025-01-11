@@ -15,13 +15,13 @@ const Music = () => {
       bgcolor={"#111111"}
       width={{xs:"100vw", sm:"100vw"}}
       direction={{xs:"column"}}
-      justifyContent="left"
+      justifyContent="center"
       alignItems={{xs:"center"}}
       paddingLeft={7}
       paddingTop={7}
       paddingRight={7}
       paddingBottom={2}
-      mt={{xs:"50vw", sm:"15vh"}}
+      mt={{xs:"10vh", sm:"15vh"}}
     >
       
       <Box 
