@@ -51,7 +51,7 @@ const FretboardTrainer = () => {
   }
 
   return (
-    <Stack height={"100vh"} bgcolor={"#080808"} direction={"row"}>
+    <Stack direction={"row"} bgcolor={"#111111"}>
     <Typography variant={'h5'} width={40} margin={1} color={feedback? "green": "red"}>{target_note}</Typography>
     <Stack>
       {[0,1,2,3,4,5,6,7,8,9,10,11,12].map((fret)=>{
