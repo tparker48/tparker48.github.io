@@ -59,12 +59,12 @@ const FretboardTrainer = () => {
           <div>
           <Stack
             direction={'horizontal'} justifyContent={"center"}>
-            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(6, fret)}} width={"5.0vh"} height={"6.8vh"}  onClick={()=>{register_fret('E', fret)}}>{get_fret_text(6, fret)}</Box>
-            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(5, fret)}} width={"5.0vh"} height={"6.8vh"}  onClick={()=>{register_fret('A', fret)}}>{get_fret_text(5, fret)}</Box>
-            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(4, fret)}} width={"5.0vh"} height={"6.8vh"}  onClick={()=>{register_fret('D', fret)}}>{get_fret_text(4, fret)}</Box>
-            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(3, fret)}} width={"5.0vh"} height={"6.8vh"}  onClick={()=>{register_fret('G', fret)}}>{get_fret_text(3, fret)}</Box>
-            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(2, fret)}} width={"5.0vh"} height={"6.8vh"}  onClick={()=>{register_fret('B', fret)}}>{get_fret_text(2, fret)}</Box>
-            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(1, fret)}} width={"5.0vh"} height={"6.8vh"}  onClick={()=>{register_fret('E', fret)}}>{get_fret_text(1, fret)}</Box>
+            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(6, fret)}} width={"5.0vh"} height={"6.2vh"}  onClick={()=>{register_fret('E', fret)}}>{get_fret_text(6, fret)}</Box>
+            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(5, fret)}} width={"5.0vh"} height={"6.2vh"}  onClick={()=>{register_fret('A', fret)}}>{get_fret_text(5, fret)}</Box>
+            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(4, fret)}} width={"5.0vh"} height={"6.2vh"}  onClick={()=>{register_fret('D', fret)}}>{get_fret_text(4, fret)}</Box>
+            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(3, fret)}} width={"5.0vh"} height={"6.2vh"}  onClick={()=>{register_fret('G', fret)}}>{get_fret_text(3, fret)}</Box>
+            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(2, fret)}} width={"5.0vh"} height={"6.2vh"}  onClick={()=>{register_fret('B', fret)}}>{get_fret_text(2, fret)}</Box>
+            <Box alignContent={"center"} sx={{ borderBottom: 2,  borderColor: '#888888', bgcolor: get_fret_color(1, fret)}} width={"5.0vh"} height={"6.2vh"}  onClick={()=>{register_fret('E', fret)}}>{get_fret_text(1, fret)}</Box>
           </Stack>
           </div>
         )
