@@ -6,12 +6,16 @@ import Plugins from "./components/Plugins";
 import Resume from "./components/Resume";
 import About from "./components/About";
 import Music from "./components/Music";
-import Navbar from "./components/Navbar.js";
 import PluginPage from "./components/PluginPage.js";
 import { plugin_data } from "./data.js";
 import FretboardTrainer from "./components/FretboardTrainer.js";
 
 function App() {
+  // temp code to redirect to my github repos
+  window.location.href = 'https://www.github.com/tparker48'; 
+  return;
+
+  // unreacable
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
